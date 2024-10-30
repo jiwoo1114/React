@@ -17,10 +17,10 @@ function App() {
   //return <Quiz02 name="이지은" age={21} phone="010-2323-9090">컴퓨터 공학</Quiz02>
   //return <Quiz03 name="이지은" phone="010-2323-9090">컴퓨터 공학</Quiz03>
   //return <Quiz04 major="국어국문과" grade={['A', 'A+', 'C', 'B', 'B+', 'D']} start={false}></Quiz04>
-   return <Quiz05 major="국어국문과" grade={['A', 'A+', 'C', 'B', 'B+', 'D']} start={false}>컴퓨터 공학</Quiz05>
-  // return <Quiz06 />
-  // return <Quiz07 />
-  // return <Quiz08 />
+  //return <Quiz05 major="국어국문과" grade={['A', 'A+', 'C', 'B', 'B+', 'D']} start={false}>컴퓨터 공학</Quiz05>
+   //return <Quiz06 />
+   //return <Quiz07 />
+   return <Quiz08 />
 }
 
 export default App;

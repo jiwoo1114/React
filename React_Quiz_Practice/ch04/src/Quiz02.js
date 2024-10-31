@@ -9,6 +9,22 @@ function Quiz02() {
    const { username, message } = form
 
    const onChange = (e) => {
+
+      const name = e.target.name 
+      const value = e.target.value
+      //if문으로 메세지 input창에 20글자 이상 x 조건걸기
+      if (name === 'message' && value.length > 20) {
+         alert('20자를 초과해 작성 할 수 없습니다')
+          return
+      } 
+           
+      
+      const nextForm = {
+         ...form,
+         [name]: value
+
+      }
+      setForm(nextForm)
       // 이 부분 작성
    }
 

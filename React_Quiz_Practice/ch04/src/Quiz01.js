@@ -9,6 +9,7 @@ const Quiz01 = () => {
 
    const { val1, val2, val3 } = form
 
+   //input 입력창 값을 사용자가 입력한대로 수정하게 만드는 함수
    const onChange = (e) => {
       const nextForm = {
          ...form,
@@ -20,6 +21,12 @@ const Quiz01 = () => {
 
    const onClick = () => {
       // 이 부분 작성
+
+      alert(`더한 값:${Number(val1) + Number(val2) + Number(val3)}`)
+
+
+      //value 값 초기화
+      setForm({val1:0,val2:0,val3:0})
    }
 
    const onKeyDown = (e) => {

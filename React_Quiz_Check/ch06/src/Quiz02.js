@@ -8,4 +8,6 @@ function Quiz02() {
    return <div>Hello World</div>
 }
 
+// 렌더링 될 때 마다 실행
+
 export default Quiz02

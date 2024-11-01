@@ -14,11 +14,11 @@ function Quiz02() {
    const [inputDept, setinputDept] = useState('') //id 지정해주는 state
    
 
-  const onChange = (e) => { setInputName(e.target.value) } //value 값 변경
-  const onChange2 = (e) => { setinputDept(e.target.value) } //value 값 변경
+  const onChangename = (e) =>  setInputName(e.target.value)  //value 값 변경
+  const onChangedept = (e) =>  setinputDept(e.target.value)  //value 값 변경
    
    const onClick = () => {
-      const nextemploy = ({
+      const nextemploy =employees.concat({
          id: NextId,
          name: inputName,
          dept:inputDept,
@@ -31,7 +31,7 @@ function Quiz02() {
 
    }
 
-  const employeeList = employees.map((employee) => (
+    const employeeList = employees.map((employee) => (
       <li key={employee.id}>
          사원명: {employee.name}, 부서: {employee.dept}
       </li>
@@ -40,8 +40,8 @@ function Quiz02() {
 
    return (
       <>
-         <input type='text' placeholder='이름' value={inputName} onChange={onChange}></input>
-         <input type='text' placeholder='부서' value={inputDept} onChange={onChange2}></input>
+         <input type='text' placeholder='이름' value={inputName} onChange={onChangename}></input>
+         <input type='text' placeholder='부서' value={inputDept} onChange={onChangedept}></input>
          <button onClick={onClick}>추가</button>
          <ul>{employeeList}</ul>
       </>

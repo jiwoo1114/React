@@ -5,7 +5,10 @@ const Quiz01 = () => {
    const [isRunning, setIsRunning] = useState(false)
 
    useEffect(() => {
+
+      console.log('타이머 클릭')
       let timerId
+      //1초마다 시간 흘러가게 하기
       if (isRunning) {
          timerId = setInterval(() => {
             setSeconds((prevSeconds) => prevSeconds + 1)
@@ -13,15 +16,18 @@ const Quiz01 = () => {
       }
 
       return () => {
+         console.log('타이머 실행 중...')
          clearInterval(timerId)
       }
    }, [isRunning])
 
    const startTimer = () => {
+      setIsRunning(true)
       //여기에 코드 작성
    }
 
    const stopTimer = () => {
+      setIsRunning(false)
       //여기에 코드 작성
    }
 

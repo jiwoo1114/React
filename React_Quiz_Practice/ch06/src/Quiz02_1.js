@@ -1,18 +1,18 @@
-import React, { useState } from 'react'
+import React, { useCallback, useState } from 'react'
 
 function Quiz02_1() {
    const [items, setItems] = useState([])
    const [text, setText] = useState('')
 
-   const handleChange = (event) => {
-      setText(event.target.value)
-   }
+   const handleChange = useCallback((event) => setText(event.target.value),[])
 
-   const handleSubmit = (event) => {
+   const handleSubmit = useCallback((event) => {
       event.preventDefault()
+      //배열에 사용자가 입력한 값(text) 추가해 새로운 배열 생성
       setItems([...items, text])
       setText('')
-   }
+      //items 배열과 text가 변경될 때만 함수 실행
+   },[items,text])
 
    return (
       <div>

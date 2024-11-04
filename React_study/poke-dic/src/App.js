@@ -10,20 +10,24 @@ function App() {
     {
       id: 1,
       name: '팬텀',
-      type:'고스트',
       img:'./images/팬텀.PNG',
+      checked:true
     },
 
     {
       id: 2,
       name:'메타몽',
       img:'./images/메타몽.PNG',
+      checked:true
+
     },
      
      {
       id: 3,
       name: '블래키',
-      img:'./images/블래키.PNG'
+      img:'./images/블래키.PNG',
+      checked:false
+
     }
   ])
 
@@ -31,28 +35,42 @@ function App() {
   const nextId = useRef(4)
 
   //포켓몬 등록하는 함수(pocketmon_insert)
-  const onInsert = (name) => { 
+  const onInsert = useCallback((name) => { 
     const pocket = {
       id: nextId.current, //id값 가져오기
-      name, //name:name
-      img:'/images/' + name +'.png',
+      name,
+      img:'/images/' + name +'.PNG',
     }
     SetPocket(Pockets.concat(pocket))
     nextId.current += 1 //nextId를 1씩 더하기
-  }
+  },[Pockets]
 
+
+)
   //포켓몬 삭제하는 함수(pocketmon_list)
-  const onRemove = (id) => {
+  const onRemove = useCallback((id) => {
     const removedPockets = Pockets.filter((Pocket) => Pocket.id !== id)
     SetPocket(removedPockets)
-  }
+  },[Pockets])
 
   //포켓몬 비활성화 활성화 함수(pocketmon_list)
+  
+  const onToggle = useCallback( (id) => {
+    const togglePockets = Pockets.map((Pocket) => Pocket.id === id ?
+      {
+      ...Pockets,
+      checked: !Pocket.checked, //checke 값을 덮어쓴다(원래의 값에서 반대)
+    } : Pocket
+    )
+    
+      setTodos(togglePockets)
+  },[Pockets]
+)
 
   return (
     <Pocketmon>
       <Pocketmon_Insert onInsert={ onInsert } />
-      <Pocketmon_list onRemove={ onRemove } />
+      <Pocketmon_list Pockets={Pockets} onRemove={ onRemove } onToggle={onToggle}/>
     </Pocketmon>
   
   );

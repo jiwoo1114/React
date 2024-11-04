@@ -1,0 +1,36 @@
+.PocketMon_Insert{
+    display: flex;
+}
+
+.PocketMon_Insert input {
+    display: inline-block;
+    background: white;
+    border-top-left-radius: 15px;
+     border-bottom-right-radius: 15px;
+    border: 1px solid black;
+    padding: 5px;
+    margin-top: 20px;
+    font-size: 1.125rem;
+    line-height: 1.5;
+    color: black;
+    flex: 1;
+    cursor: pointer;
+}
+
+
+.PocketMon_Insert button {
+    border: 1px solid white;
+    background: rgb(233, 58, 58);
+    border-radius: 5px;
+    margin-top: 20px;
+    height: 50px;
+    color: white;
+    padding: 15px;
+    font-size: 1.5rem;
+    align-items: center;
+    cursor: pointer;
+}
+
+.PocketMon_Insert button:hover {
+    background: #adb5bd;
+}

@@ -19,7 +19,7 @@ const Quiz01 = () => {
          console.log('타이머 실행 중...')
          clearInterval(timerId)
       }
-   }, [isRunning])
+   }, [isRunning]) //isRunning state가 바뀔 때만 렌더링 후 코드 실행
 
    const startTimer = () => {
       setIsRunning(true)

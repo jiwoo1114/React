@@ -19,7 +19,8 @@ function NewsList3() {
       <div>
          <h2>뉴스기사</h2>
          <ul>{list}</ul>
-         <Routes>{/* 여기에 코드 작성 */}</Routes>
+         <Routes> <Route path="/:topic_id" element={<NewsListTopic />} />
+         </Routes>
       </div>
    )
 }

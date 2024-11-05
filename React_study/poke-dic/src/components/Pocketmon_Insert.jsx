@@ -1,12 +1,20 @@
 import './CSS/Pocketmon_Insert.css'; 
 import React, {useState} from 'react';
-import { IoMdAddCircle } from "react-icons/io";
+//import { IoMdAddCircle } from "react-icons/io";
+import 'bootstrap/dist/css/bootstrap.min.css';
+//부트스트랩 리액트
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import InputGroup from 'react-bootstrap/InputGroup';
+import { FaSearchPlus } from "react-icons/fa";
+//import { Button,InputGroup,Form} from 'react-bootstrap';
+
 
 function Pocketmon_Insert({ onInsert }) {
     const [value, Setvalue] = useState('')
     const onChange = (e) => Setvalue(e.target.value)
     
-    const onSubmit = (e) => {
+    const onClick = (e) => {
         e.preventDefault() //서버 재로딩 막음
 
         
@@ -17,13 +25,18 @@ function Pocketmon_Insert({ onInsert }) {
     
     return ( 
  
-        <div class="input-group mb-3">
-        <form action="#" className='.PocketMon_Insert' onSubmit={onSubmit}> 
-        <input type="text" classNme="form-control" placeholder="포켓몬의 이름을 입력하세요" value={value} onChange={onChange} aria-describedby="button-addon2"/>
-        <button className="btn btn-outline-secondary" type="submit" id="button-addon2">< IoMdAddCircle /></button>
-        </form>
-      </div>
-      
+        <InputGroup size="lg" className="mb-3 PocketMon_Insert">
+            <Form.Control
+            onChange={onChange}
+          placeholder="포켓몬의 이름을 검색하세요"
+          aria-label="Large"
+          aria-describedby="inputGroup-sizing-sm"
+            />
+            {/*포켓몬 추가버튼*/ }
+            <Button variant="outline-secondary" id="button-addon2" type='submit' onClick={onClick}>
+          <FaSearchPlus />
+        </Button>
+      </InputGroup>
 
      );
 }

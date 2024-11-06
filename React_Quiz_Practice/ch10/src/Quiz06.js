@@ -1,10 +1,19 @@
 import styled, { keyframes } from 'styled-components'
 
 const move = keyframes`
-   /* 여기에 코드 작성 */
+  0%{
+  left:0;
+  }
+  50%{
+  left:300px;
+  }
+  100%{
+  left:0;
+  }
 `
 
 const Ball = styled.div`
+   position:absolute;
    width: 50px;
    height: 50px;
    background-color: red;

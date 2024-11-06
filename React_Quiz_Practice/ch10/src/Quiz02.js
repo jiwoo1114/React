@@ -1,7 +1,11 @@
 import styled from 'styled-components'
 
 const Button = styled.button`
-   /* 여기에 코드 작성 */
+ background-color: ${(props) => props.color || 'gray'};
+   color: white;
+   padding: 10px 20px;
+   border: none;
+   border-radius: 5px;
 `
 
 function Quiz02() {

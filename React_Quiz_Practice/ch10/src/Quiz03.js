@@ -1,7 +1,11 @@
 import styled from 'styled-components'
 
 const Card = styled.div`
-   /* 여기에 코드 작성 */
+   border:2px solid black;
+   &:hover{
+   border:2px solid red;
+}
+
 `
 
 function Quiz03() {

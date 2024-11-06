@@ -1,7 +1,7 @@
 import './App.css'
 import { Route, Routes, NavLink } from 'react-router-dom'
 import Category from './Category'
-import NewsList2 from './NewsList2'
+import NewsList3 from './NewsList3'
 import NewsPage from './NewsPage'
 
 function App() {
@@ -22,7 +22,7 @@ function App() {
          <Routes>
             <Route path="/" element={<NewsPage />} />
             <Route path="/category" element={<Category />} />
-            <Route path="/newsList" element={< NewsList2 />} />
+            <Route path="/newsList/*" element={< NewsList3 />} />
             <Route path="/*" element={'Not Found'} />
          </Routes>
       </div>

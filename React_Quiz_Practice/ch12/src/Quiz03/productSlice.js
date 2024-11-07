@@ -5,7 +5,7 @@ const productSlice = createSlice({
     initialState: [],
     reducers: {
         addproduct: (state, action) => {
-            return state.push({id:Date.now(), text:action.payload})
+           state.push({id:Date.now(), text:action.payload})
         },
 
         removeproduct: (state, action) => {

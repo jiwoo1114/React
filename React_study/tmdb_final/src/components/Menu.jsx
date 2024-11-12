@@ -12,7 +12,7 @@ function  Menu() {
                         </NavLink>
                     </li>
                      <li>
-                        <NavLink to='/populer'>
+                        <NavLink to='/popular'>
                             인기영화
                         </NavLink>
                     </li>

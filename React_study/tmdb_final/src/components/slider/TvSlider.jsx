@@ -2,11 +2,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch,useSelector } from 'react-redux';
 
-
-
-
 import { Swiper, SwiperSlide } from 'swiper/react';
-
 
 // Import Swiper styles
 import 'swiper/css';

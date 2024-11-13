@@ -8,7 +8,7 @@ function  Menu() {
                 <ul>
                     <li>
                         <NavLink to='/'>
-                        <img src='./images/logo.svg' alt='로고' width='160'></img>
+                        <img src='/images/logo.svg' alt='로고' width='160'></img>
                         </NavLink>
                     </li>
                      <li>
